@@ -10,31 +10,31 @@ public class Main {
     private List<String> strings = new ArrayList<String>();
 
     public static void main(String[] args) {
-            List<String> strings = new ArrayList<>();
-             strings.add( "Kaan",
-                "The wire",
-                "Dragon Ball",
-                "Tacos Pony",
-                "Discord",
-                "Leon",
-                "Adrian",
-                "Ronaldo",
-                "WWI",
-                "Xoloitzcuintle");
+        List<String> strings = new ArrayList<>();
+             strings.add("Kaan");
+             strings.add("The Wire");
+             strings.add("Dragon Ball");
+             strings.add("Tacos Pony");
+             strings.add("Discord");
+             strings.add("Leon");
+             strings.add("Adrian");
+             strings.add("Ronaldo");
+             strings.add("WWI");
+             strings.add("Xoloitzcuintle");
 
              var sortLengthAnonimousClass = Main.sortLengtAnonimousClass();
-             Main.showList(SortLengtByAnonimousClass);
+             System.out.println(Main.showList(SortLengtByAnonimousClass));
              var sortLengthLamda = Main.sortLengtLamda();
-             Main.showList(SortLengtByLamda);
+             System.out.println(Main.showList(SortLengtByLamda));
              var sortLengthReference = Main.sortLengtReference();
-             Main.showList(SortLengtByReference);
+             System.out.println(Main.showList(SortLengtByReference));
 
              var sortAlphabeticAnonimousClass = Main.sortAlphabeticAnonimousClass();
-             Main.showList(SortAlphaeticByAnonimousClass);
+             System.out.println(Main.showList(SortAlphaeticByAnonimousClass));
              var sortAlphabeticLambda = Main.sortAlphabeticLamda();
-             Main.showList(SortAlphaeticByLamda);
+             System.out.println(Main.showList(SortAlphaeticByLamda));
              var sortAlphabeticReference = Main.sortAlphabeticReference();
-             Main.showList(SortAlphaeticByReference);
+             System.out.println(Main.showList(SortAlphaeticByReference));
     }
 
     public void loadStrings(String... strings) {
@@ -101,6 +101,9 @@ public class Main {
             public int compare(Object o1, Object o2) {
                 return o1.toString().compareToIgnoreCase(o2.toString());
             }
+        }
+        public void showList(List<String> stringList){
+            stringList.forEach(System.out::println);
         }
 
     }
