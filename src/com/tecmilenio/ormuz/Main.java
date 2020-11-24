@@ -7,20 +7,34 @@ import java.util.List;
 
 public class Main {
 
+    private List<String> strings = new ArrayList<String>();
+
     public static void main(String[] args) {
-        ArrayList<String> stringslist = new ArrayList<>();
-        stringslist.add("Kaan");
-        stringslist.add("The wire");
-        stringslist.add("Dragon Ball");
-        stringslist.add("Discord");
-        stringslist.add("Tacos Pony");
-        stringslist.add("Leon");
-        stringslist.add("Adrian");
-        stringslist.add("Ronaldo");
-        stringslist.add("WWI");
-        stringslist.add("Xoloitzcuintle");
+            List<String> strings = new ArrayList<>();
+             strings.add( "Kaan",
+                "The wire",
+                "Dragon Ball",
+                "Tacos Pony",
+                "Discord",
+                "Leon",
+                "Adrian",
+                "Ronaldo",
+                "WWI",
+                "Xoloitzcuintle");
 
+             var sortLengthAnonimousClass = Main.sortLengtAnonimousClass();
+             Main.showList(SortLengtByAnonimousClass);
+             var sortLengthLamda = Main.sortLengtLamda();
+             Main.showList(SortLengtByLamda);
+             var sortLengthReference = Main.sortLengtReference();
+             Main.showList(SortLengtByReference);
 
+             var sortAlphabeticAnonimousClass = Main.sortAlphabeticAnonimousClass();
+             Main.showList(SortAlphaeticByAnonimousClass);
+             var sortAlphabeticLambda = Main.sortAlphabeticLamda();
+             Main.showList(SortAlphaeticByLamda);
+             var sortAlphabeticReference = Main.sortAlphabeticReference();
+             Main.showList(SortAlphaeticByReference);
     }
 
     public void loadStrings(String... strings) {
@@ -38,16 +52,17 @@ public class Main {
         return strings;
     }
 
-    public List<String> sortLengttLamda() {
+    public List<String> sortLengtLamda() {
         List<String> strings = this.strings;
         strings.sort((str1, str2) -> str1.length() - str2.length());
         return strings;
     }
 
-    public List<String> sortLengttReference() {
+    public List<String> sortLengtReference() {
         List<String> strings = this.strings;
         SortLengt sortLengt = new SortLengt();
         strings.sort(sortLengt::compare);
+        return strings;
     }
 
     class SortLengt implements Comparator {
@@ -78,6 +93,7 @@ public class Main {
             List<String> strings = this.strings;
             SortAlphaetic sortAlphabetic = new SortAlphaetic();
             Collections.sort(strings, sortAlphabetic::compare);
+            return strings;
         }
 
         class SortAlphaetic implements Comparator {
