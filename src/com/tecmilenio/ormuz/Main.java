@@ -1,15 +1,13 @@
 package com.tecmilenio.ormuz;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     private List<String> strings = new ArrayList<String>();
 
     public static void main(String[] args) {
+
         List<String> strings = new ArrayList<>();
              strings.add("Kaan");
              strings.add("The Wire");
@@ -22,19 +20,23 @@ public class Main {
              strings.add("WWI");
              strings.add("Xoloitzcuintle");
 
+        Iterator it = strings.iterator();
+        while(it.hasNext())
+            System.out.println(it.next());
+
              var sortLengthAnonimousClass = Main.sortLengtAnonimousClass();
-             System.out.println(Main.showList(SortLengtByAnonimousClass));
+             Main.showList(SortLengtByAnonimousClass);
              var sortLengthLamda = Main.sortLengtLamda();
-             System.out.println(Main.showList(SortLengtByLamda));
+             Main.showList(SortLengtByLamda);
              var sortLengthReference = Main.sortLengtReference();
-             System.out.println(Main.showList(SortLengtByReference));
+             Main.showList(SortLengtByReference);
 
              var sortAlphabeticAnonimousClass = Main.sortAlphabeticAnonimousClass();
-             System.out.println(Main.showList(SortAlphaeticByAnonimousClass));
+             Main.showList(SortAlphaeticByAnonimousClass);
              var sortAlphabeticLambda = Main.sortAlphabeticLamda();
-             System.out.println(Main.showList(SortAlphaeticByLamda));
+             Main.showList(SortAlphaeticByLamda);
              var sortAlphabeticReference = Main.sortAlphabeticReference();
-             System.out.println(Main.showList(SortAlphaeticByReference));
+             Main.showList(SortAlphaeticByReference);
     }
 
     public void loadStrings(String... strings) {
@@ -102,8 +104,8 @@ public class Main {
                 return o1.toString().compareToIgnoreCase(o2.toString());
             }
         }
-        public void showList(List<String> stringList){
-            stringList.forEach(System.out::println);
+        public void showList(List<String> strings){
+            strings.forEach(System.out::println);
         }
 
     }

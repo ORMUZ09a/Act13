@@ -1,5 +1,6 @@
 package com.tecmilenio.ormuz;
 
+
 public class Alphaetic {
     private static void SortAlphaeticByAnonimousClass() {
     }
