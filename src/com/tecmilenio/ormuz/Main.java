@@ -4,39 +4,49 @@ import java.util.*;
 
 public class Main {
 
-    private List<String> strings = new ArrayList<String>();
+    List<String> strings = new ArrayList<String>();
 
     public static void main(String[] args) {
+        Main main = new Main();
+        main.loadStrings(
+             "Kaan",
+             "The Wire",
+             "Dragon Ball",
+             "Tacos Pony",
+             "Discord",
+             "Leon",
+             "Adrian",
+             "Ronaldo",
+             "WWI",
+            "Xoloitzcuintle");
 
-        List<String> strings = new ArrayList<>();
-             strings.add("Kaan");
-             strings.add("The Wire");
-             strings.add("Dragon Ball");
-             strings.add("Tacos Pony");
-             strings.add("Discord");
-             strings.add("Leon");
-             strings.add("Adrian");
-             strings.add("Ronaldo");
-             strings.add("WWI");
-             strings.add("Xoloitzcuintle");
+             var sortLengthByAnonimousClass = main.sortLengtAnonimousClass();
+             System.out.println("\n Length \n");
+             System.out.println("\n Anonimus Class \n");
+             main.showList(sortLengthByAnonimousClass);
 
-        Iterator it = strings.iterator();
-        while(it.hasNext())
-            System.out.println(it.next());
+             var sortLengthByLamda = main.sortLengtLamda();
+             System.out.println("\n Lambda \n");
+             main.showList(sortLengthByLamda);
 
-             var sortLengthAnonimousClass = Main.sortLengtAnonimousClass();
-             Main.showList(SortLengtByAnonimousClass);
-             var sortLengthLamda = Main.sortLengtLamda();
-             Main.showList(SortLengtByLamda);
-             var sortLengthReference = Main.sortLengtReference();
-             Main.showList(SortLengtByReference);
+             var sortLengthByReference = main.sortLengtReference();
+             System.out.println("\n Reference \n");
+             main.showList(sortLengthByReference);
 
-             var sortAlphabeticAnonimousClass = Main.sortAlphabeticAnonimousClass();
-             Main.showList(SortAlphaeticByAnonimousClass);
-             var sortAlphabeticLambda = Main.sortAlphabeticLamda();
-             Main.showList(SortAlphaeticByLamda);
-             var sortAlphabeticReference = Main.sortAlphabeticReference();
-             Main.showList(SortAlphaeticByReference);
+             var sortAlphabeticByAnonimousClass = main.sortAlphabeticAnonimousClass();
+             System.out.println("\n Alphabetic \n");
+             System.out.println("\n Anonimus Class \n");
+             main.showList(sortAlphabeticByAnonimousClass);
+
+             var sortAlphabeticByLambda =main.sortAlphabeticLamda();
+             System.out.println("\n Lambda \n");
+             main.showList(sortAlphabeticByLambda);
+
+             var sortAlphabeticByReference =main.sortAlphabeticReference();
+             System.out.println("\n Reference \n");
+             main.showList(sortAlphabeticByReference);
+
+
     }
 
     public void loadStrings(String... strings) {
